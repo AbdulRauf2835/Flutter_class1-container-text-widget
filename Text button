@@ -1,0 +1,20 @@
+ appBar: AppBar(
+
+
+          title: Text(" Text Button"),
+        ),
+        body:TextButton(
+          child: Text("Click Here!",style: TextStyle(
+            color: Colors.red,
+          ),),
+          onPressed: (){
+            print("you clicked button");
+          },
+          onLongPress: (){
+    print("this is longpress function");
+
+          },
+        )
+    );
+  }
+}
