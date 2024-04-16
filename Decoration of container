@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+debugShowCheckedModeBanner: false ,
+      theme: ThemeData(
+
+
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Flutter Basics'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+var arrColors=["blue","green","red","yellow","pink","indigo","violet"];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+
+
+          title: Text(" Text Button"),
+        ),
+        body:Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: Colors.white,
+          child:Center(
+            child: Container(
+              width: 150,
+              height: 150,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                border: Border.all(
+                  color: Colors.black,
+                  width: 5,
+                ),
+
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 11,
+                  color: Colors.black,
+                    spreadRadius: 9
+                  )
+
+                ],
+                  shape: BoxShape.circle
+              ),
+
+
+            ),
+          ),
+        )
+    );
+  }
+}
+
+
+
+
