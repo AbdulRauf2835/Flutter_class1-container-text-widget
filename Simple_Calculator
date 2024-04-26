@@ -1,0 +1,141 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_basics/widgets/rounded-btn.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false ,
+      theme: ThemeData(
+
+
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home:  MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget{
+
+  @override
+
+  State<MyHomePage> createState() {
+return(MyHomeState());
+  }
+
+
+
+}
+class MyHomeState extends State<MyHomePage>{
+  var no1controller=TextEditingController();
+  var no2controller=TextEditingController();
+  var result="";
+  int count=0;
+  @override
+  Widget build(BuildContext context) {
+    return(Scaffold(
+
+      appBar: AppBar(
+        title: Text("Counter"),
+      ),
+      body:
+        Container(
+          color:Colors.blue.shade200,
+          child: Column(
+            children: [
+             TextField(
+               controller: no1controller,
+               keyboardType: TextInputType.number,
+             ),
+              TextField(
+                controller: no2controller,
+                keyboardType: TextInputType.number,
+              ),
+              ElevatedButton(onPressed: (){
+                var no1=int.parse(no1controller.text.toString());
+                var no2=int.parse(no2controller.text.toString());
+
+                var sum=no2+no1;
+                result="The sum of two numbers is$sum";
+                print(result);
+                setState(() {
+
+                });
+
+
+              }, child: Text("+",style: TextStyle(fontSize: 70,fontWeight: FontWeight.bold),)),
+              ElevatedButton(onPressed: (){
+                var no1=int.parse(no1controller.text.toString());
+                var no2=int.parse(no2controller.text.toString());
+
+                var sub=no2-no1;
+                result="The subtraction of two numbers is$sub";
+                print(result);
+                setState(() {
+
+                });
+
+              }, child: Text("-",style: TextStyle(fontSize: 70,fontWeight: FontWeight.bold),)),
+              ElevatedButton(onPressed: (){
+                var no1=int.parse(no1controller.text.toString());
+                var no2=int.parse(no2controller.text.toString());
+
+                var mul=no2*no1;
+                result="The mul of two numbers is$mul";
+                print(result);
+                setState(() {
+
+                });
+
+
+              }, child: Text("*",style: TextStyle(fontSize: 70,fontWeight: FontWeight.bold),)),
+              ElevatedButton(onPressed: (){
+                var no1=int.parse(no1controller.text.toString());
+                var no2=int.parse(no2controller.text.toString());
+
+                var div=no2/no1;
+                result="The div of two numbers is$div";
+                print(result);
+                setState(() {
+
+                });
+
+
+              }, child: Text("/",style: TextStyle(fontSize: 70,fontWeight: FontWeight.bold),)),
+              SizedBox(height: 40),
+              SizedBox(width:160,height: 70,
+
+              ),
+              Text("Your result is$result",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+
+
+
+
+
+            ],
+          ),
+
+        )
+    )
+    );
+
+
+
+  }
+
+}
