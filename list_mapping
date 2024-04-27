@@ -73,7 +73,11 @@ class MyHomeState extends State<MyHomePage>{
                 child: (
                     Container(
                   width: 50,height: 50,
-                  color:Colors.blue.shade200,
+
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(21),
+                    color:Colors.blue.shade200,
+                  ),
 
 
                   child: Center(child: Text(value)),)
